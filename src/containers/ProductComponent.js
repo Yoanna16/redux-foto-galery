@@ -1,8 +1,15 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToFavorites } from '../redux/actions/productActions'
+
 
 const ProductComponent = () => {
     const products = useSelector((state) => state.allProducts.products);
+    const dispatch = useDispatch();
+
+    function handleAddTOFavorites(product) {
+        dispatch(addToFavorites(product))
+    }
     const renderList = products.map((product) => {
         return (
             <div className='four wide column'>
@@ -14,6 +21,9 @@ const ProductComponent = () => {
                         <div className='content'>
                             <div className='header'>{product.title}</div>
                         </div>
+                        <button onClick={() => handleAddTOFavorites({albumId: product.albumId, id: product.id })}>
+                            Add to favorites
+                        </button>
                     </div>
 
                 </div>

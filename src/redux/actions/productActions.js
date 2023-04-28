@@ -14,3 +14,10 @@ export const selectedProduct  = (product) => {
         payload: product,
     }
 }
+
+export const addToFavorites = (favorites) => {
+    return {
+        type: ActionTypes.ADD_TO_FAVORITES,
+        payload: favorites,
+    }
+}
