@@ -2,26 +2,26 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ProductComponent from './ProductComponent';
 import axios from 'axios';
-import { setProducts } from '../redux/actions/productActions'
+import { setAlbums } from '../redux/actions/productActions'
 
-const ProductListing = () => {
-    const products = useSelector((state) => state);
+const AlbumListing = () => {
+    const albums = useSelector((state) => state);
     const dispatch = useDispatch();
 
 
-    const fetchProducts = async ( ) => {
+    const fetchAlbums = async ( ) => {
         const response = await axios
         .get('https://jsonplaceholder.typicode.com/photos')
         .catch((e) => {
           console.error(e);
         });
-        dispatch(setProducts(response.data))
+        dispatch(setAlbums(response.data))
     }
 
     useEffect(() => {
-        fetchProducts();
+        fetchAlbums();
     }, [])
-    console.log('Products:', products)
+    console.log('Albums:', albums)
 /* 
     useEffect(() => {
         const fetchRepos = async () => {
@@ -34,9 +34,9 @@ const ProductListing = () => {
     }, []) */
   return (
     <div className='ui grid container'>
-        <ProductComponent />
+        <AlbumComponent />
     </div>
   )
 }
 
-export default ProductListing
+export default AlbumListing

@@ -3,25 +3,25 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToFavorites } from '../redux/actions/productActions'
 
 
-const ProductComponent = () => {
-    const products = useSelector((state) => state.allProducts.products);
+const AlbumComponent = () => {
+    const albums = useSelector((state) => state.allAlbums.albums);
     const dispatch = useDispatch();
 
-    function handleAddTOFavorites(product) {
-        dispatch(addToFavorites(product))
+    function handleAddTOFavorites(album) {
+        dispatch(addToFavorites(album))
     }
-    const renderList = products.map((product) => {
+    const renderList = albums.map((album) => {
         return (
             <div className='four wide column'>
                 <div className='ui link cards'>
                     <div className='card'>
                         <div className='image'>
-                            <img src={product.url}></img>
+                            <img src={album.url}></img>
                         </div>
                         <div className='content'>
-                            <div className='header'>{product.title}</div>
+                            <div className='header'>{album.title}</div>
                         </div>
-                        <button onClick={() => handleAddTOFavorites({albumId: product.albumId, id: product.id })}>
+                        <button onClick={() => handleAddTOFavorites({albumId: album.albumId, id: album.id })}>
                             Add to favorites
                         </button>
                     </div>
@@ -37,4 +37,4 @@ const ProductComponent = () => {
 
 }
 
-export default ProductComponent
+export default AlbumComponent

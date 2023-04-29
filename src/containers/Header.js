@@ -7,7 +7,11 @@ const Header = () => {
             <h2>
                 Album Gallery
             </h2>
-
+        </div>
+        <div>
+            <button>
+                See Favorites
+            </button>
         </div>
     </div>
   )
