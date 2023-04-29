@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -9,9 +10,11 @@ const Header = () => {
             </h2>
         </div>
         <div>
+            <Link to="/favorites">
             <button>
                 See Favorites
             </button>
+            </Link>
         </div>
     </div>
   )

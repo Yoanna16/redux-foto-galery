@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import ProductComponent from './ProductComponent';
+import AlbumComponent from './AlbumComponent';
 import axios from 'axios';
 import { setAlbums } from '../redux/actions/productActions'
 
